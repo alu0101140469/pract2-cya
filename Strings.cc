@@ -56,6 +56,9 @@ std::vector<std::string> String::Suffixes() const {
     return suffixes;  // Devuelve el conjunto de sufijos
 }
 
+// MODIF: Método GetString
+
+
 // Sobrecarga del operador de salida para imprimir la cadena
 std::ostream& operator<<(std::ostream& os, const String& str) {
     os << str.str_;  // Imprime la cadena almacenada

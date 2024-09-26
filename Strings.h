@@ -39,6 +39,11 @@ public:
     
     // Devuelve el conjunto de sufijos de la cadena
     std::vector<std::string> Suffixes() const;
+
+    // MODIF: devuelve la union de todas las cadenas
+    std::string GetString() const {
+        return str_;
+    }
     
     // Sobrecarga del operador de salida para mostrar la cadena
     friend std::ostream& operator<<(std::ostream& os, const String& str);

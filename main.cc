@@ -9,6 +9,7 @@
 // Fecha: 23/09/2024
 // Archivo: main.cc
 // Descripción: Programa cliente para operar con cadenas y lenguajes
+// Modificación: opcode 6 que sea la union de todas las cadenas y su lenguaje
 
 #include "Strings.h"
 #include <fstream>  // Para manejar archivos
@@ -118,6 +119,16 @@ int main(int argc, char* argv[]) {
                 }
                 oss << " }";  // Cerrar la lista
                 results.push_back(oss.str());
+                break;
+            }
+            // MODIF: Mostrar la union de las cadenas
+            case 6: {
+                std::string concatenado;
+
+                for(const auto& string : strings) {
+                    concatenado += string.GetString(); //accede ala cadena interna
+                }
+                results.push_back(concatenado);
                 break;
             }
             default:
