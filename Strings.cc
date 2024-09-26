@@ -37,21 +37,21 @@ std::string String::Reverse() const {
 // Método que calcula y devuelve el conjunto de prefijos de la cadena
 std::set<std::string> String::Prefixes() const {
     std::set<std::string> prefixes;
-    //prefixes.insert("&"); // Agregar la cadena vacía
+    prefixes.insert("&");
     // Se generan los prefijos añadiendo cada vez un símbolo más de la cadena
-    for (size_t i = 0; i <= str_.length(); ++i) {
+    for (size_t i = 1; i <= str_.length(); ++i) {
         prefixes.insert(str_.substr(0, i));
     }
     return prefixes;  // Devuelve el conjunto de prefijos
 }
 
 // Método que calcula y devuelve el conjunto de sufijos de la cadena
-std::set<std::string> String::Suffixes() const {
-    std::set<std::string> suffixes;
-    //suffixes.insert("&"); // Agregar la cadena vacía
+std::vector<std::string> String::Suffixes() const {
+    std::vector<std::string> suffixes;
+    suffixes.push_back("&");
     // Se generan los sufijos eliminando cada vez un símbolo más del principio
-    for (size_t i = 0; i <= str_.length(); ++i) {
-        suffixes.insert(str_.substr(i));
+    for (size_t i = str_.length(); i > 0; --i) {
+        suffixes.push_back(str_.substr(i - 1));
     }
     return suffixes;  // Devuelve el conjunto de sufijos
 }

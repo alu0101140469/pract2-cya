@@ -108,11 +108,15 @@ int main(int argc, char* argv[]) {
             case 5: {  // Mostrar sufijos de la cadena
                 std::ostringstream oss;
                 oss << "{";
+                bool first = true;  // Para controlar la inserción de la coma
                 for (const auto& suffix : string.Suffixes()) {
-                    oss << suffix << ", ";
+                    if (!first) {
+                        oss << " , ";
+                    }
+                    oss << suffix;
+                    first = false;
                 }
-                oss.seekp(-2, std::ios_base::end);  // Eliminar la última coma
-                oss << "}";
+                oss << " }";  // Cerrar la lista
                 results.push_back(oss.str());
                 break;
             }

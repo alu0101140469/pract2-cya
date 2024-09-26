@@ -16,6 +16,7 @@
 #include <string>
 #include <set>
 #include <iostream>
+#include <vector>
 
 // Clase String: representa una cadena con su alfabeto asociado
 class String {
@@ -37,7 +38,7 @@ public:
     std::set<std::string> Prefixes() const;
     
     // Devuelve el conjunto de sufijos de la cadena
-    std::set<std::string> Suffixes() const;
+    std::vector<std::string> Suffixes() const;
     
     // Sobrecarga del operador de salida para mostrar la cadena
     friend std::ostream& operator<<(std::ostream& os, const String& str);
